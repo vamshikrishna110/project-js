@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel = "stylesheet" href = "banking.css"> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/5f59ca6ad3.js" crossorigin="anonymous"></script>
+    <script type = "text/javascript" src = "jquery-1.12.4.min.js"> </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('body').css
+                 ({ "margin" : "0px", 
+                "padding-top": "100px",
+                "background-color": "#363958"
+
+                })
+
+            $('.submit-area').css
+            ({ "padding": "30px", 
+                "margin-top": "50px", 
+                "border-radius": "10px", 
+                "box-shadow": "5px 5px grey",
+                "color": "white", 
+                "background-color": "royalblue" })
+
+            $("#account-area").css({"margin-top" : "5%"})
+            
+            $(".withdraw").css({"background-color" : "lightsalmon"})
+
+            $(".deposit").css({"background-color" : "slateblue"})
+           
+            $(".balance").css({"background-color" : " tomato"})
+
+            $('.status').css({"color" : "white", "padding": "20px", "border-radius": "10px", "margin" : "0px 20px"})
+
+            $("#info").css({"padding" : "40px", "color" : "white"})
+
+        });
+    </script>
+</head>
+<body>
+    <div id="account-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-3">
+                    <div class="deposit status">
+                        <h5>Deposit</h5>
+                        <h2>&#x20b9 <span id="current-deposit">00</span></h2>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 mb-3">
+                    <div class="withdraw status">
+                        <h5>Withdraw</h5>
+                        <h2>&#x20b9 <span id="current-withdraw">00</span></h2>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 mb-3">
+                    <div class="balance status">
+                        <h5>Balance</h5>
+                        <h2>&#x20b9 <span id="current-balance">1000</span></h2>
+                    </div>
+                 </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="submit-area">
+                        <h4>Deposit Amount</h4>
+                        <input id="deposit-amount" type="text" class="form-control" placeholder="Enter deposit amount"><br>
+                        <button id="deposit-btn" class="btn btn-success">Deposit</button>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="submit-area">
+                        <h4>Withdraw Amount</h4>
+                        <input id="withdraw-amount" type="text" class="form-control" placeholder="Enter withdraw amount"><br>
+                        <button id="withdraw-btn" class="btn btn-success">Withdraw</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="info">
+            <table>
+                <thead>
+                    <tr>
+                        <td>S No</td>
+                        <td>Amount</td>
+                        <td>Balance</td>
+                        <td>Time</td>
+                    </tr>
+                </thead>
+                <tbody id="tbody"></tbody>
+            </table>
+        </div>
+
+    </div>
+</body>
+</html>
+<script src = banking.js> </script>
