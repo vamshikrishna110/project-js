@@ -36,6 +36,8 @@ deposit_btn.onclick = function () {
 
     arr.push(obj);
     console.log(arr);
+    sessionStorage.setItem("details", JSON.stringify(obj));
+
   } else {
     alert("please enter valid amount to deposit");
   }
@@ -72,6 +74,7 @@ withdrawbtn.onclick = function () {
     };
 
     arr.push(obj);
+    sessionStorage.setItem("details", JSON.stringify(obj));
   } else {
     alert("please enter valid amount to withdraw");
   }
@@ -81,7 +84,9 @@ withdrawbtn.onclick = function () {
 
 
 function display() {
-  document.getElementById("tbody").innerHTML = "";
+  document.getElementById("tbody").innerHTML = ""; 
+  console.log(JSON.parse(sessionStorage.getItem("details")))
+
   for (var i = 0; i < arr.length; i++) {
     let tr = document.createElement("tr");
     let td1 = document.createElement("td");
@@ -105,3 +110,22 @@ function display() {
     document.getElementById("tbody").appendChild(tr);
   }
 }
+
+
+
+
+function fun1() {
+ var x =  document.getElementById("container1");
+ var y = document.getElementById("container2");
+ if(x.style.display == "none") {
+  document.getElementById("toggle").innerHTML="Transcations details";
+  x.style.display = "block"
+  y.style.display = "none"
+ }else {
+  document.getElementById("toggle").innerHTML="Home";
+  x.style.display = "none"
+  y.style.display = "block"
+ }
+}
+
+

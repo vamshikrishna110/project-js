@@ -5,14 +5,14 @@
   font-family: 'FontAwesome', sans-serif;
 }
 
-body {
+/* body {
   background: white;
   color: white;
   font: 87.5%/1.5em 'Open Sans', sans-serif;
   margin: 0;
-}
+} */
 
-p {
+/* p {
   line-height: 1.5em;
 }
 
@@ -21,9 +21,9 @@ after { clear: both; }
 .login {
   margin: 50px auto;
   width: 320px;
-}
+} */
 
-.login form {
+/* .login form {
   margin: auto;
   padding: 22px 22px 22px 22px;
   width: 100%;
@@ -78,4 +78,4 @@ after { clear: both; }
 }
 #login form input[type="submit"]:hover {
   background: #16aa56;
-}
+} */

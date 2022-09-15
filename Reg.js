@@ -6,6 +6,8 @@ function store(){
     var lowerCaseLetters = /[a-z]/g;
     var upperCaseLetters = /[A-Z]/g;
     var numbers = /[0-9]/g;
+    var mailformat = '[a-z0-9]+@[a-z]+\.[a-z]{2,3}';
+    var mail = '[a-z0-9]+@gmail.com'
 
     if(name.value.length == 0){
         alert('Please fill in email');
@@ -28,7 +30,10 @@ function store(){
     }else if(!pw.value.match(lowerCaseLetters)){
         alert('please add 1 lovercase letter');
 
-    }else{
+    }else if (!name.value.match(mail)) {
+        alert("please enter valid email address")
+        
+    }else if(name.value.match(mail)){
         localStorage.setItem('name', name.value);
         localStorage.setItem('pw', pw.value);
         alert('Your account has been created');

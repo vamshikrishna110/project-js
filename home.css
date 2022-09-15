@@ -15,9 +15,14 @@ html {
 }
 /* @import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap"); */
 
-:root {
-  /* primary color */
-  --Dark-Blue: hsl(233, 26%, 24%);
+ :root {
+  /* primary color
+   //hsl means hue, saturation, and lightness. 
+   Hue is a degree on the color wheel from 0 to 360. 0 is red, 120 is green, 240 is blue.
+   Saturation is a percentage value; 0% means a shade of gray and 100% is the full color.
+   Lightness is also a percentage; 0% is black, 100% is white.
+   */
+  --Dark-Blue: hsl(233, 26%, 24%); 
   --Lime-Green: hsl(136, 65%, 51%);
   --Bright-Cyan: hsl(192, 70%, 51%);
 
@@ -42,7 +47,7 @@ html {
   --Dark-boxshadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   --Line-height: 1.5;
   --Opacity: 0.8;
-}
+} 
 /*
 ==================
   global styles

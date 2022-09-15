@@ -19,8 +19,8 @@
                  ({ "margin" : "0px", 
                 "padding-top": "100px",
                 "background-color": "#363958"
-
-                })
+         
+            })
 
             $('.submit-area').css
             ({ "padding": "30px", 
@@ -41,12 +41,34 @@
             $('.status').css({"color" : "white", "padding": "20px", "border-radius": "10px", "margin" : "0px 20px"})
 
             $("#info").css({"padding" : "40px", "color" : "white"})
+            $(".btn").css({
+                "padding" :"20px",
+                 "color" : "white"
 
+            })
+
+            $(".btn1").css({
+                 "border-radius" : "20px",
+                 "font-size": "14px",
+                 "background-color": "#008CBA", /* Green */
+                "border": "none",
+                "color": "white",
+                "padding": "10px",
+                "text-align": "center",
+                "text-decoration": "none",
+                "display": "inline-block",
+                "font-size": "16px"
+
+            })
+
+            
+
+           
         });
     </script>
 </head>
 <body>
-    <div id="account-area">
+    <!-- <div id="account-area">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 mb-3">
@@ -92,6 +114,82 @@
             </div>
         </div>
 
+        <!-- <div id="info">
+            <table>
+                <thead>
+                    <tr>
+                        <td>S No</td>
+                        <td>Amount</td>
+                        <td>Balance</td>
+                        <td>Time</td>
+                    </tr>
+                </thead>
+                <tbody id="tbody"></tbody>
+            </table>
+        </div> 
+
+      
+
+    </div>!-->
+
+
+
+    <a href="home.html" style="display: inline; position: relative; left: 1300px;" class="btn">Log Out </a>
+   
+<button onclick="fun1()" id="toggle" class = "btn1"> Transcations details</button>
+    <div class="container" id="container1">
+        <div id="account-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 mb-3">
+                        <div class="deposit status">
+                            <h5>Deposit</h5>
+                            <h2>&#x20b9 <span id="current-deposit">00</span></h2>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 mb-3">
+                        <div class="withdraw status">
+                            <h5>Withdraw</h5>
+                            <h2>&#x20b9 <span id="current-withdraw">00</span></h2>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 mb-3">
+                        <div class="balance status">
+                            <h5>Balance</h5>
+                            <h2>&#x20b9 <span id="current-balance">1000</span></h2>
+                        </div>
+                     </div>
+                </div>
+            </div>
+    
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="submit-area">
+                            <h4>Deposit Amount</h4>
+                            <input id="deposit-amount" type="text" class="form-control" placeholder="Enter deposit amount"><br>
+                            <button id="deposit-btn" class="btn btn-success main-btn">Deposit</button>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="submit-area">
+                            <h4>Withdraw Amount</h4>
+                            <input id="withdraw-amount" type="text" class="form-control" placeholder="Enter withdraw amount"><br>
+                            <button id="withdraw-btn" class="btn btn-success">Withdraw</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- <a href="home.html" class="d-flex flex-row justify-content-end btn">Log Out </a> -->
+    
+        </div>
+    </div>
+
+    <div class="container" id="container2" style="display: none";>
         <div id="info">
             <table>
                 <thead>
@@ -105,7 +203,6 @@
                 <tbody id="tbody"></tbody>
             </table>
         </div>
-
     </div>
 </body>
 </html>

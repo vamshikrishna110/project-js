@@ -5,7 +5,9 @@
   font-family: 'FontAwesome', sans-serif;
 }
 
-body {
+
+
+/* body {
   background: white;
   color: white;
   font: 87.5%/1.5em 'Open Sans', sans-serif;
@@ -78,4 +80,4 @@ after { clear: both; }
 }
 #login form input[type="submit"]:hover {
   background: #16aa56;
-}
+} */
