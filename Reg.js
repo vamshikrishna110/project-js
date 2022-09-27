@@ -6,7 +6,6 @@ function store(){
     var lowerCaseLetters = /[a-z]/g;
     var upperCaseLetters = /[A-Z]/g;
     var numbers = /[0-9]/g;
-    var mailformat = '[a-z0-9]+@[a-z]+\.[a-z]{2,3}';
     var mail = '[a-z0-9]+@gmail.com'
 
     if(name.value.length == 0){

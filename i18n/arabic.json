@@ -1,0 +1,15 @@
+{    
+    "Name": "اسم",
+    "Company": "شركة",
+    "Email Address": "عنوان البريد الإلكتروني رقم",
+    "Mobile No.": "الجوال",
+    "Application Form": "استمارة التقديم",
+    "Telephone No.":"الهاتف لا",
+    "Gender":"جنس",
+    "Male":"ذكر",
+    "Female": "أنثى",
+    "Prefer not to say":"افضل عدم القول",
+    "LocaleFormat": "ar-SA",
+    "CurrencySymbol" :"£",
+    "Currency":"SAR"
+}

@@ -1,0 +1,15 @@
+{
+    "Name": "Name",
+    "Company": "Unternehmen",
+    "Email Address":"E-Mail-Addresse",
+    "Mobile No.": "Handynummer",
+    "Application Form": "Anmeldeformular",
+    "Telephone No.":"Telefonnummer",
+    "Gender":"Geschlecht",
+    "Male":"Männlich",
+    "Female": "Weiblich",
+    "Prefer not to say":"Mache lieber keine Angabe",
+    "LocaleFormat": "de-de",
+    "CurrencySymbol" :"€",
+    "Currency":"EUR"
+}

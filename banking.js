@@ -9,7 +9,7 @@ const currentwithdrawval = document.getElementById("current-withdraw");
 
 var arr = new Array();
 
-//console.log(typeof(currentStringToInt))
+var count_transaction = 1;
 deposit_btn.onclick = function () {
   console.log(despositamountbtn.value);
 
@@ -20,10 +20,7 @@ deposit_btn.onclick = function () {
     let total = currentStringToInt + parseFloat(despositamountbtn.value);
     console.log(total);
     currentbalanceval.textContent = total;
-    var date_time = new Date();
-    console.log(date_time);
-
-    
+   
     var today = moment();
     var now = today.format("YYYY-MM-DD HH:mm:ss");
 
@@ -34,15 +31,18 @@ deposit_btn.onclick = function () {
       time: now,
     };
 
+    let date = document.getElementById("date").value;
     arr.push(obj);
     console.log(arr);
-    sessionStorage.setItem("details", JSON.stringify(obj));
 
+    sessionStorage.setItem(count_transaction, JSON.stringify(obj));
+    sessionStorage.setItem("count", count_transaction);
+    count_transaction++;
   } else {
     alert("please enter valid amount to deposit");
   }
 
-  display();
+  //display();
 };
 
 withdrawbtn.onclick = function () {
@@ -62,70 +62,99 @@ withdrawbtn.onclick = function () {
     var date_time = new Date();
     console.log(date_time);
 
-   
     var today = moment();
     var now = today.format("YYYY-MM-DD HH:mm:ss");
 
-    var obj = {
+    var objOne = {
       operation: "-",
       amount: withdrawamount.value,
       balance: total,
       time: now,
     };
 
-    arr.push(obj);
-    sessionStorage.setItem("details", JSON.stringify(obj));
+    arr.push(objOne);
+    sessionStorage.setItem(count_transaction, JSON.stringify(objOne));
+    sessionStorage.setItem("count", count_transaction);
+    count_transaction++;
   } else {
     alert("please enter valid amount to withdraw");
   }
 
-  display();
+  //display();
 };
 
-
-function display() {
-  document.getElementById("tbody").innerHTML = ""; 
-  console.log(JSON.parse(sessionStorage.getItem("details")))
-
-  for (var i = 0; i < arr.length; i++) {
-    let tr = document.createElement("tr");
-    let td1 = document.createElement("td");
-    td1.innerHTML = i + 1;
-    tr.appendChild(td1);
-
-    let td2 = document.createElement("td");
-    td2.innerHTML = arr[i].operation + arr[i].amount;
-    tr.appendChild(td2);
-
-    let td3 = document.createElement("td");
-    td3.innerHTML = arr[i].balance;
-    tr.appendChild(td3);
-
-    let td4 = document.createElement("td");
-    td4.innerHTML = arr[i].time;
-    tr.appendChild(td4);
-
-    let check = document.createElement("p");
-    check.innerHTML = arr;
-    document.getElementById("tbody").appendChild(tr);
+function fun1() {
+  var x = document.getElementById("container1");
+  var y = document.getElementById("container2");
+  if (x.style.display == "none") {
+    document.getElementById("toggle").innerHTML = "Transcations details";
+    x.style.display = "block";
+    y.style.display = "none";
+  } else {
+    document.getElementById("toggle").innerHTML = "Home";
+    x.style.display = "none";
+    y.style.display = "block";
   }
 }
 
+function getTransaction() {
+  document.getElementById("info").style.display = "block";
+  let p1 = document.createElement("p");
+  p1.style.color = "white";
+  p1.innerHTML =
+    "Transction detaials of :" + document.getElementById("date").value;
+  document.getElementById("transc_info").innerHTML = "";
+  document.getElementById("transc_info").appendChild(p1);
 
-
-
-function fun1() {
- var x =  document.getElementById("container1");
- var y = document.getElementById("container2");
- if(x.style.display == "none") {
-  document.getElementById("toggle").innerHTML="Transcations details";
-  x.style.display = "block"
-  y.style.display = "none"
- }else {
-  document.getElementById("toggle").innerHTML="Home";
-  x.style.display = "none"
-  y.style.display = "block"
- }
+  display();
 }
 
+function display() {
+  document.getElementById("tbody").innerHTML = "";
+  var d_t = document.getElementById("date").value;
+  
+ 
+  var count = sessionStorage.getItem("count");
+  var check=0;
+  console.log(count);
+  for (var i = 1; i <= count; i++) {
+    //get date foirmat
+    var trans = sessionStorage.getItem(i);
+    trans = JSON.parse(trans);
+    console.log(trans.time)
 
+    var date1 = new Date(trans.time)
+    dateTime1 = moment(date1).format('YYYY-MM-DD')
+    console.log(dateTime1);
+
+    if (d_t == dateTime1) {
+    
+      let tr = document.createElement("tr");
+      let td1 = document.createElement("td");
+      td1.innerHTML = i;
+      tr.appendChild(td1);
+
+      let td2 = document.createElement("td");
+      td2.innerHTML = trans.operation + trans.amount;
+      tr.appendChild(td2);
+
+      let td3 = document.createElement("td");
+      td3.innerHTML = trans.balance;
+      tr.appendChild(td3);
+
+      let td4 = document.createElement("td");
+      td4.innerHTML = trans.time;
+      tr.appendChild(td4);
+
+      document.getElementById("tbody").appendChild(tr);
+      check=1;
+    }
+  } 
+  if(check==0){
+    var msg=document.createElement("text");
+    msg.innerHTML="No Transaction found for "+d_t+" date."
+    document.getElementById("tbody").appendChild(msg);
+    document.getElementById("thead").innerHTML="";
+  }
+
+}
